@@ -272,9 +272,9 @@ mark.mark2 {
 }
 
 .read-button {
-  width: 44px;
-  height: 44px;
-  border-radius: 44px;
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
   margin-left: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -293,7 +293,7 @@ mark.mark2 {
 }
 
 .read-button img {
-  width: 27px;
+  width: 21px;
 }
 
 .ui.wide.column.articles-home.secondaries-articles .img-article-container > img {

@@ -40,7 +40,7 @@
             <strong>
               {!! substr(strip_tags($post->content), 0, 220) !!} ...
             </strong>
-            <p>.. {!! substr(strip_tags($post->content), 350, 140) !!} ...</p>
+            <p>.. {!! substr(strip_tags($post->content), 340, 140) !!} ...</p>
           </p>
           </div>
           @guest ('admin')
