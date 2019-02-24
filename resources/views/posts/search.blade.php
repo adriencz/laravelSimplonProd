@@ -19,7 +19,7 @@
           <h3><a href="{{ url('/posts/'.$post->id.'') }}"><mark class="mark2">{{ $post->title }}</mark></a></h3>
         </div>
         <div class="ui sixteen wide column text-article-container">
-          <span class="date">03 nov 2018</span><br>
+          <span class="date">{{ date_format($post->created_at,"d/m/Y") }}</span><br>
           <p>
             {!! substr(strip_tags($post->content), 0, 105) !!} ...
           </p>

@@ -26,7 +26,7 @@
       @endauth
       </div>
       <div class="ui sixteen wide column text-article-container">
-        <span class="date">03 nov 2018</span>
+        <span class="date">{{ date_format($post->created_at,"d/m/Y") }} @if (date_format($post->created_at,"d/m/Y") != date_format($post->updated_at,"d/m/Y")) (modifié le {{ date_format($post->updated_at,"d/m/Y") }}) @endif</span>
         {!! $post->content !!}
       </div>
     </div>
