@@ -1,0 +1,127 @@
+
+.ui.top.fixed.menu.header-app {
+  height: 72px;
+  box-shadow: 0 2px 2px 0 rgba(40,75,124,0.08) !important;
+  border: 0;
+}
+
+.ui.top.fixed.menu.header-app .item.item-logo {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  border-left: 0 !important;
+  padding-right: 15px;
+  padding-left: 0;
+  opacity: 0.90;
+}
+
+.ui.top.fixed.menu.header-app .item.item-logo img {
+  width: 48px;
+  /* opacity: 0.90; */
+  /* display: none; */
+  margin-top: -2px;
+}
+
+.ui.top.fixed.menu.header-app .menu-container {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.ui.top.fixed.menu.header-app .menu-container:hover {
+  opacity: 0.7;
+}
+.ui.top.fixed.menu.header-app .menu-container i {
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.ui.top.fixed.menu.header-app .item {
+  font-family: circular;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  color: #454545;
+}
+
+.ui.top.fixed.menu.header-app .item::before {
+  display: none !important;
+}
+
+.ui.top.fixed.menu.header-app .item.item-logo h1 {
+  color: white;
+  margin: auto;
+  font-family: Timmana;
+  font-size: 31px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding-top: 9px;
+  /* margin-left: 10px; */
+  color: #151515;
+}
+
+
+.ui.top.fixed.menu.header-app .item.item-logo h1 span {
+  color: #16cb89;
+  color: #4d37fb;
+}
+
+
+.ui.top.fixed.menu.header-app .right.item input {
+  border-radius: 8px 0 0 8px;
+  font-family: circular;
+  border: 1px solid #cfcccc;
+  border-right: 0;
+}
+.ui.top.fixed.menu.header-app .right.item button {
+  border-radius: 0 8px 8px 0;
+  background-color: white;
+  border: 1px solid #cfcccc;
+}
+
+.ui.top.fixed.menu.header-app .item .ui.button i {
+  margin: auto;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  color: #252525;
+}
+
+
+
+
+
+.ui.sidebar.vertical.menu.overlay {
+  z-index: 9999999;
+}
+
+.ui.sidebar.vertical.menu.overlay .item {
+  font-family: circular;
+  font-size: 16px;
+}
+
+.ui.sidebar.vertical.menu.overlay .item.item-form {
+  padding: 0 !important;
+  border-bottom: 1px solid #efeeee;
+}
+
+.ui.sidebar.vertical.menu.overlay .item input {
+  width: 75% !important;
+  border: 0;
+  height: 40px;
+}
+
+.ui.sidebar.vertical.menu.overlay .item button {
+  border-left: 1px solid #efeeee;
+  color: #101010;
+  border-radius: 0;
+}
+.ui.sidebar.vertical.menu.overlay .item button i {
+  margin: auto;
+  /* margin-top: 2px; */
+}

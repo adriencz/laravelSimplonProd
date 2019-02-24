@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'circular';
+  src: url('/fonts/circular.ttf');
+}
+
+body {
+  /* background-image: url('/img/back1.png') !important; */
+  height: auto !important;
+}
+
+
+.ui.grid.grid-body.container {
+  margin-left: 0;
+  padding-top: 130px !important;
+  padding-bottom: 120px !important;
+}
