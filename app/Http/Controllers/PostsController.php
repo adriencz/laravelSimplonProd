@@ -208,7 +208,7 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-        $illustration = Illustration::where('post_id', $id)->firstOrFail();
+        $illustration = Illustration::where('post_id', $id)->first();
 
         $filename = public_path('/storage/'.$post->illustration->filename);
 
@@ -218,8 +218,14 @@ class PostsController extends Controller
           File::delete($filename);
         }
 
-        if ($post->delete() && $illustration->delete())
+        if ($post)
         {
+          $post->delete();
+          
+          if ($illustration)
+          {
+            $illustration->delete();
+          }
           return redirect()->route('index');
         }
         else
