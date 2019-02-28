@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Connexion administrateur')
+
 @section('body')
 
       <form class="ui fourteen wide mobile ten wide tablet seven wide computer column form-create" method="post" action="{{ url('/admin/login') }}" enctype="multipart/form-data">

@@ -28,7 +28,9 @@
 
         <label for="file">Illustration de l'article :</label>
         <div class="ui field ten wide file-button-container">
-          <img id="imgupload" src="{{ url('/storage/'.$post->illustration->filename) }}" alt="your image" />
+          @if (isset($post->illustration->filename))
+            <img id="imgupload" src="{{ url('/storage/'.$post->illustration->filename) }}" alt="your image" />
+          @endif
           <div class="ui action input">
               <input type="text" readonly>
               <label for="file" class="ui icon button">

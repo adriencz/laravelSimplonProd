@@ -8,7 +8,7 @@
   <div class="ui fourteen wide widescreen thirteen wide large screen sixteen wide computer column article-show">
     <div class="article-content">
     <div class="ui grid centered grid-show">
-      <div class="ui sixteen wide column img-article-container" style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}')">
+      <div class="ui sixteen wide column img-article-container" @if (isset($post->illustration->filename))style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}')"@endif>
         <h3><a href=""><mark>{{ $post->title }}</mark></a></h3>
       </div>
       <div class="extra">

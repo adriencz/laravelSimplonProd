@@ -143,11 +143,11 @@ class PostsController extends Controller
 
         $post = Post::findOrFail($id);
 
-      // if update illustration ////////////
+      // if update illustration //////////////////////
         if ($request->illustration)
         {
           $illustration = Illustration::where('post_id', $id)->first();
-        // if illustration post_id founded
+          // if illustration post_id founded
           if ($illustration)
           {
             $this->validate($request, Illustration::$rulesUpdate);
@@ -166,6 +166,23 @@ class PostsController extends Controller
             $illustration->update([
               'filename'  => $filename,
             ]);
+          }
+          else // if illustration post_id not founded
+          {
+            $this->validate($request, Illustration::$rulesUpdate);
+            $filename = $id.'.'.strtolower($request->illustration->extension());
+            $request->illustration->storeAs('public', $filename);
+
+            $illustration = Illustration::create([
+              'filename'  => $filename,
+              'post_id'   => $post->id,
+            ]);
+            // if error on insertion of illustration
+            if (!$illustration) {
+              return redirect()->back()->withErrors([
+                'errors' => 'Erreur lors de l\'enregistrement de l\'illustration !',
+              ]);
+            }
           }
         }
       //////////////////////////////////////
@@ -191,6 +208,7 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+        $illustration = Illustration::where('post_id', $id)->firstOrFail();
 
         $filename = public_path('/storage/'.$post->illustration->filename);
 
@@ -200,7 +218,7 @@ class PostsController extends Controller
           File::delete($filename);
         }
 
-        if ($post->delete())
+        if ($post->delete() && $illustration->delete())
         {
           return redirect()->route('index');
         }

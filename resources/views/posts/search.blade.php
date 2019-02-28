@@ -15,7 +15,7 @@
     <div class="ui five wide widescreen five wide large screen height wide computer eight wide tablet sixteen wide mobile column articles-home secondaries-articles">
       <div class="article-content">
       <div class="ui grid">
-        <div class="ui sixteen wide column img-article-container" style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}');">
+        <div class="ui sixteen wide column img-article-container" @if (isset($post->illustration->filename)) style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}');" @endif>
           <h3><a href="{{ url('/posts/'.$post->id.'') }}"><mark class="mark2">{{ $post->title }}</mark></a></h3>
         </div>
         <div class="ui sixteen wide column text-article-container">

@@ -30,7 +30,9 @@
       <div class="article-content">
       <div class="ui grid">
         <div class="ui nine wide widescreen eight wide computer nine wide large screen column img-article-container">
+        @if (isset($post->illustration->filename))
           <img src="{{ url('/storage/'.$post->illustration->filename) }}" alt="">
+        @endif
         </div>
         <div class="ui seven wide widescreen eight wide computer seven wide large screen column text-article-container">
           <h3><a href="{{ url('/posts/'.$post->id.'') }}"><mark>{!! substr(strip_tags($post->title), 0, 70) !!} ...</mark></a></h3>
@@ -74,7 +76,7 @@
     <div class="ui sixteen wide mobile eight wide tablet only column articles-home secondaries-articles">
       <div class="article-content">
       <div class="ui grid">
-        <div class="ui sixteen wide column img-article-container" style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}');">
+        <div class="ui sixteen wide column img-article-container" @if (isset($post->illustration->filename)) style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}');" @endif>
           <h3><a href="{{ url('/posts/'.$post->id.'') }}"><mark class="mark2">{{ $post->title }}</mark></a></h3>
         </div>
         <div class="ui sixteen wide column text-article-container">
@@ -121,7 +123,7 @@
     <div class="ui sixteen wide mobile eight wide tablet eight wide computer column articles-home secondaries-articles">
       <div class="article-content">
       <div class="ui grid">
-        <div class="ui sixteen wide column img-article-container" style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}');">
+        <div class="ui sixteen wide column img-article-container" @if (isset($post->illustration->filename)) style="background-image: url('{{ url('/storage/'.$post->illustration->filename) }}');" @endif>
           <h3><a href="{{ url('/posts/'.$post->id.'') }}"><mark class="mark2">{{ $post->title }}</mark></a></h3>
         </div>
         <div class="ui sixteen wide column text-article-container">
